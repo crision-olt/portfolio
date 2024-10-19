@@ -5,6 +5,7 @@ interface Props {
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   colorScheme?: "blue" | "orange" | "green" | "silver";
   class?: string;
+  id?: string;
   domProps?: { [key: string]: any }
 }
 
@@ -13,18 +14,19 @@ const {
   href,
   size = "md",
   colorScheme = "green",
-  domProps = {}
+  domProps = {},
+  id
 } = Astro.props;
 
 const className = `button ${variant} size-${size} colorScheme-${colorScheme} ${Astro.props.class || ""}`;
 ---
 
 {href ? (
-  <a class={className} href={href} {...domProps}>
+  <a id={id} class={className} href={href} {...domProps}>
     <slot />
   </a>
 ) : (
-  <button class={className} {...domProps}>
+  <button id={id} class={className} {...domProps}>
     <slot />
   </button>
 )}
