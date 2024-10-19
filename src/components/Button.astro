@@ -22,11 +22,11 @@ const className = `button ${variant} size-${size} colorScheme-${colorScheme} ${A
 ---
 
 {href ? (
-  <a id={id} class={className} href={href} {...domProps}>
+  <a aria-label={Astro.props.domProps?.["aria-label"]} id={id} class={className} href={href} {...domProps}>
     <slot />
   </a>
 ) : (
-  <button id={id} class={className} {...domProps}>
+  <button aria-label={Astro.props.domProps?.["aria-label"]} id={id} class={className} {...domProps}>
     <slot />
   </button>
 )}

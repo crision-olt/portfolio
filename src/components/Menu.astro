@@ -5,19 +5,19 @@ import Button from "../components/Button.astro";
 
 <nav>
   <div class="menu">
-    <ul>
+    <ul class="navigation-links">
       <MenuItem text="About" link="/about" />
       <MenuItem text="Contact" link="/contact" />
       <!-- TODO: -->
       <!-- <MenuItem text="Newsletter" link="/newsletter" /> -->
     </ul>
 
-  <Button id="download-resume" variant="outline" size="md" colorScheme="orange" href="/Crision_CV.pdf">
-    Download Resume
-    <svg style="margin-top: -4px; margin-left: 8px; width: 16px;" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line>
-    </svg>
-  </Button>
+    <Button id="download-resume" variant="outline" size="md" domProps={{"aria-label":"Download Cristian Ionut Olteanu Resume"}} colorScheme="orange" href="/Crision_CV.pdf">
+      Download Resume
+      <svg style="margin-top: -4px; margin-left: 8px; width: 16px;" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+    </Button>
   </div>
 
   <button id="mobile-toggle-menu">
@@ -61,6 +61,7 @@ import Button from "../components/Button.astro";
       backdrop-filter: blur(4px);
       &.menu-open {
         display: flex;
+        align-items: center;
         position: absolute;
         left: 0;
         top: 70px;
@@ -73,6 +74,14 @@ import Button from "../components/Button.astro";
         margin: 0;
         background: rgb(3 31 72 / 90%);
         padding: 2.5rem 0;
+        #download-resume {
+          width: 18rem;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 1.75rem;
+        }
       }
     }
   }
